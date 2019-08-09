@@ -93,6 +93,22 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "league/flysystem": {
+        "version": "1.0.53"
+    },
+    "league/flysystem-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "8ad3ded1f39fedce098e43259741f42092a1010e"
+        },
+        "files": [
+            "config/packages/flysystem.yaml",
+            "var/storage/.gitignore"
+        ]
+    },
     "monolog/monolog": {
         "version": "1.24.0"
     },
@@ -104,6 +120,15 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.2.2"
+    },
+    "phpdocumentor/reflection-common": {
+        "version": "1.0.1"
+    },
+    "phpdocumentor/reflection-docblock": {
+        "version": "4.3.1"
+    },
+    "phpdocumentor/type-resolver": {
+        "version": "0.4.0"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -277,6 +302,9 @@
     "symfony/property-access": {
         "version": "v4.3.3"
     },
+    "symfony/property-info": {
+        "version": "v4.3.3"
+    },
     "symfony/routing": {
         "version": "4.2",
         "recipe": {
@@ -291,6 +319,12 @@
             "config/packages/test/routing.yaml",
             "config/routes.yaml"
         ]
+    },
+    "symfony/serializer": {
+        "version": "v4.3.3"
+    },
+    "symfony/serializer-pack": {
+        "version": "v1.0.2"
     },
     "symfony/service-contracts": {
         "version": "v1.1.5"
@@ -318,6 +352,19 @@
             "templates/base.html.twig"
         ]
     },
+    "symfony/validator": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "d902da3e4952f18d3bf05aab29512eb61cabd869"
+        },
+        "files": [
+            "config/packages/test/validator.yaml",
+            "config/packages/validator.yaml"
+        ]
+    },
     "symfony/var-dumper": {
         "version": "v4.3.3"
     },
@@ -343,6 +390,9 @@
     },
     "twig/twig": {
         "version": "v2.11.3"
+    },
+    "webmozart/assert": {
+        "version": "1.4.0"
     },
     "zendframework/zend-code": {
         "version": "3.3.1"
