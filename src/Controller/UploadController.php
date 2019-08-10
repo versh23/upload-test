@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use League\Flysystem\FilesystemInterface;
@@ -31,11 +33,10 @@ class UploadController extends AbstractController
             return $this->json([], 400);
         }
 
-
         $errors = $validator->validate($file, new File([
             //Это например можно вынести в конфиг
             'maxSize' => '2M',
-            'mimeTypes' => ['application/pdf', 'application/x-pdf', 'image/*']
+            'mimeTypes' => ['application/pdf', 'application/x-pdf', 'image/*'],
         ]));
 
         if ($errors->count()) {
@@ -43,12 +44,11 @@ class UploadController extends AbstractController
             foreach ($errors as $error) {
                 $array[] = $error->getMessage();
             }
+
             return $this->json($array, 400);
         }
 
-
         $path = $file->getClientOriginalName();
-
 
         $stream = fopen($file->getPathname(), 'r+b');
         $this->storage->putStream($path, $stream, [

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -21,6 +23,11 @@ class File
      */
     private $path;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Document", inversedBy="files")
+     */
+    private $document;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +41,18 @@ class File
     public function setPath(string $path): self
     {
         $this->path = $path;
+
+        return $this;
+    }
+
+    public function getDocument(): ?Document
+    {
+        return $this->document;
+    }
+
+    public function setDocument(?Document $document): self
+    {
+        $this->document = $document;
 
         return $this;
     }
